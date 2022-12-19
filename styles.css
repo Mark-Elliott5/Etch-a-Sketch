@@ -1,0 +1,22 @@
+body {
+    background-color: black;
+    margin: 10rem;
+}
+
+.wrapper {
+    display: grid;
+    /* gap: 1rem; */
+    padding: 0px;
+    max-width: 500px;
+}
+
+.box {
+    border: 1rem;
+    border-color: white;
+    background-color: white;
+    padding: 1rem;
+}
+
+.box.box:hover {
+    background-color: rgb(128, 0, 128);
+}
