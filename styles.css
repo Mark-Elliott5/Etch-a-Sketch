@@ -1,22 +1,30 @@
 body {
     background-color: black;
-    margin: 10rem;
 }
 
-.wrapper {
+.main-content-box {
+    display: flex;
+    margin: 10rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#grid-wrapper {
     display: grid;
-    /* gap: 1rem; */
-    padding: 0px;
-    max-width: 500px;
+    /* padding: 0px; */
+    /* margin: 50% auto; */
+    max-width: 600px;
+    min-width: 600px;
+    max-height: 600px;
+    min-height: 600px;
 }
 
 .box {
-    border: 1rem;
     border-color: white;
     background-color: white;
-    padding: 1rem;
+    padding: 0.25rem;
 }
 
-.box.box:hover {
+.box:hover {
     background-color: rgb(128, 0, 128);
 }
