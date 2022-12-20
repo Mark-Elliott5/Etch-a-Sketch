@@ -7,11 +7,9 @@ gridDimensions = parseInt(prompt());
 for (let i = 0; i < (gridDimensions**2); i++) {
     let box = document.createElement('div');
     box.classList.add('box');
-    // box.style.padding = `1fr`
+    box.addEventListener('click', () => box.classList.add('gridColor'));
     gridWrapper.appendChild(box);
 }
-
-
 
 gridWrapper.style.cssText = 
 `grid-template-columns:repeat(${gridDimensions}, minmax(0, 1fr));
