@@ -1,24 +1,32 @@
-const gridWrapper = document.getElementById('grid-wrapper');
-
 const colors = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple', 'pink']
-
+const rainbowButton = document.getElementById('rainbow-mode');
+rainbowButton.addEventListener('change', () => {
+    if (rainbowButton.checked == true) {
+        randomButton.checked = false;
+    }
+})
+const randomButton = document.getElementById('random-mode');
+randomButton.addEventListener('change', () => {
+    if (randomButton.checked == true) {
+        rainbowButton.checked = false;
+    }
+})
 const clearButton = document.getElementById('clear');
 clearButton.addEventListener('click', clearGrid);
-
 const slider = document.getElementById('dimension-slider');
 slider.addEventListener('mouseup', createGrid);
-
-let clickHeldDown = false;
+const gridWrapper = document.getElementById('grid-wrapper');
 gridWrapper.addEventListener('mousedown', () => clickHeldDown = true);
 gridWrapper.addEventListener('mouseup', () => clickHeldDown = false);
-
-const rainbowButton = document.getElementById('rainbow');
-
 let currentSelectedColor = 'black';
-
+let clickHeldDown = false;
 let colorPicker = document.getElementsByClassName('color-picker');
 for (let i = 0; i < colorPicker.length; i++) {
-    colorPicker[i].addEventListener('click', () => currentSelectedColor = colorPicker[i].value)
+    colorPicker[i].addEventListener('click', () => {
+        currentSelectedColor = colorPicker[i].value;
+        rainbowButton.checked = false;
+        randomButton.checked = false;
+    })
 }
 
 function createGrid() {
@@ -31,6 +39,10 @@ function createGrid() {
             if (clickHeldDown) {
                 if (rainbowButton.checked) {
                     box.style.backgroundColor = `${colors[(Math.floor(Math.random() * 8))]}`;
+                } else if (randomButton.checked) {
+                    box.style.backgroundColor = `rgb(${(Math.floor(Math.random() * 256))}, 
+                    ${(Math.floor(Math.random() * 256))}, 
+                    ${(Math.floor(Math.random() * 256))})`;
                 } else {
                     box.style.backgroundColor = `${currentSelectedColor}`;
                 }

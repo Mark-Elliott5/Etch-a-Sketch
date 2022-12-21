@@ -31,6 +31,12 @@ header, footer {
     justify-content: center;
 }
 
+.color-toolbox {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
 .color-picker {
     padding: 1rem;
 }
@@ -77,7 +83,6 @@ header, footer {
 
 button {
     border-radius: 8px;
-
 }
 
 #grid-wrapper {
@@ -96,5 +101,4 @@ button {
 
 .box:hover {
     background-color: rgb(128, 0, 128);
-    transition: 0;
 }
