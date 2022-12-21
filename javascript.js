@@ -1,47 +1,39 @@
 const gridWrapper = document.getElementById('grid-wrapper');
 
-const slider = document.getElementById('dimension-slider');
-slider.addEventListener('mouseup', createGrid);
+const colors = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple', 'pink']
 
 const clearButton = document.getElementById('clear');
 clearButton.addEventListener('click', clearGrid);
+
+const slider = document.getElementById('dimension-slider');
+slider.addEventListener('mouseup', createGrid);
 
 let clickHeldDown = false;
 gridWrapper.addEventListener('mousedown', () => clickHeldDown = true);
 gridWrapper.addEventListener('mouseup', () => clickHeldDown = false);
 
-// const eraseButton = document.getElementById('erase');
-// eraseButton.addEventListener('click', () => );
+const rainbowButton = document.getElementById('rainbow');
 
-// const rainbowButton = document.getElementById('rainbow');
-// rainbowButton = document.addEventListener('change', rainbow);
+let currentSelectedColor = 'black';
 
-// function rainbow() {
-//     // const gridColorRule = document.styleSheets[0].cssRules.cssText;
-//     const colors = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple', 'pink']
-//     for (let i = 0; i < (document.styleSheets[0].cssRules.length); i++) {
-//         if (document.styleSheets[0].cssRules[i].selectorText == '.gridColor') {
-//             // document.styleSheets[0].cssRules[i].cssText = `.gridColor { background-color = ${color}`
-//             var gridColorRule = document.styleSheets[0].cssRules[i].cssText;
-//             break;
-//         }
-//     }
-//     while (rainbowButton.checked) {
-//         run random color getter function;
-//         gridColorRule = random color;
-//         return;
-//     }
-// }
+let colorPicker = document.getElementsByClassName('color-picker');
+for (let i = 0; i < colorPicker.length; i++) {
+    colorPicker[i].addEventListener('click', () => currentSelectedColor = colorPicker[i].value)
+}
 
 function createGrid() {
     gridWrapper.replaceChildren();
     const gridDimensions = slider.value;
     for (let i = 0; i < (gridDimensions**2); i++) {
         let box = document.createElement('div');
-        box.classList.add('box');
+        box.style.backgroundColor = `white`;
         box.addEventListener('mouseover', () => {
             if (clickHeldDown) {
-                box.classList.add('grid-color');
+                if (rainbowButton.checked) {
+                    box.style.backgroundColor = `${colors[(Math.floor(Math.random() * 8))]}`;
+                } else {
+                    box.style.backgroundColor = `${currentSelectedColor}`;
+                }
             } else { 
                 return; 
             }
@@ -56,7 +48,7 @@ function createGrid() {
 function clearGrid() {
     const nodesToBeCleared = gridWrapper.children;
     for (let i = 0; i < nodesToBeCleared.length; i++) {
-        nodesToBeCleared[i].classList.remove('grid-color');
+        nodesToBeCleared[i].style.backgroundColor = 'white';
         }
 }
 

@@ -31,6 +31,50 @@ header, footer {
     justify-content: center;
 }
 
+.color-picker {
+    padding: 1rem;
+}
+
+.color-picker.red {
+    background-color: red;
+}
+
+.color-picker.orange {
+    background-color: orange;
+}
+
+.color-picker.yellow {
+    background-color: yellow;
+}
+
+.color-picker.green {
+    background-color: green;
+}
+
+.color-picker.cyan {
+    background-color: cyan;
+}
+
+.color-picker.blue {
+    background-color: blue;
+}
+
+.color-picker.purple {
+    background-color: purple;
+}
+
+.color-picker.pink {
+    background-color: pink;
+}
+
+.color-picker.black {
+    background-color: black;
+}
+
+.color-picker.white {
+    background-color: white;
+}
+
 button {
     border-radius: 8px;
 
@@ -44,12 +88,6 @@ button {
     min-width: 600px;
     max-height: 600px;
     min-height: 600px;
-}
-
-.box {
-    border-color: white;
-    background-color: white;
-    padding: 0.25rem;
 }
 
 .grid-color {
