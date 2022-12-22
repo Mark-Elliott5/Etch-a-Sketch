@@ -31,6 +31,32 @@ header, footer {
     justify-content: center;
 }
 
+.checkbox {
+    display: flex;
+}
+
+.checkbox:checked + label {
+    border: 1px solid green;
+    background-color: green;
+}
+
+input[type=checkbox]:checked + label {
+    background-color: green;
+}
+
+.checkbox input[type="checkbox"]{
+    opacity: 0;
+}
+
+label {
+    color: white;
+    padding: 0.7rem;
+    background-color: red;
+    margin: 0.1rem;
+    width: 7rem;
+    text-align: center
+;}
+
 .color-toolbox {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
