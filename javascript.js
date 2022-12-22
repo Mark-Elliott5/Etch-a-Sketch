@@ -1,13 +1,13 @@
 const colors = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple', 'pink']
 const rainbowButton = document.getElementById('rainbow-mode');
 rainbowButton.addEventListener('change', () => {
-    if (rainbowButton.checked == true) {
+    if (rainbowButton.checked) {
         randomButton.checked = false;
     }
 })
 const randomButton = document.getElementById('random-mode');
 randomButton.addEventListener('change', () => {
-    if (randomButton.checked == true) {
+    if (randomButton.checked) {
         rainbowButton.checked = false;
     }
 })
@@ -32,7 +32,11 @@ for (let i = 0; i < colorPalette.length; i++) {
     })
 }
 const colorPicker = document.getElementById('color-picker');
-colorPicker.addEventListener('change', () => currentSelectedColor = colorPicker.value)
+colorPicker.addEventListener('change', () => {
+    currentSelectedColor = colorPicker.value;
+    randomButton.checked = false;
+    rainbowButton.checked = false;
+});
 
 function createGrid() {
     gridWrapper.replaceChildren();
