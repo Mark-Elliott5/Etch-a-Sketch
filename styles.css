@@ -1,4 +1,6 @@
 body {
+    display: flex;
+    flex-direction: column;
     background-color: black;
     height: 100vh;
     /* min-height: 100vh; */
@@ -10,12 +12,12 @@ body {
     width: -moz-available;
     width: -webkit-fill-available;
     width: fill-available;
+    justify-content: space-around;
 }
 
 header, footer {
     color: white;
     text-align: center;
-    margin: 1rem;
 }
 
 .main-content-box {
@@ -25,37 +27,15 @@ header, footer {
     gap: 5rem;
 }
 
+/* Tools */
+
 .tools {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.checkbox {
-    display: flex;
-}
-
-.checkbox:checked + label {
-    border: 1px solid green;
-    background-color: green;
-}
-
-input[type=checkbox]:checked + label {
-    background-color: green;
-}
-
-.checkbox input[type="checkbox"]{
-    opacity: 0;
-}
-
-label {
-    color: white;
-    padding: 0.7rem;
-    background-color: red;
-    margin: 0.1rem;
-    width: 7rem;
-    text-align: center
-;}
+/* Color picker */
 
 .color-toolbox {
     display: grid;
@@ -110,6 +90,43 @@ label {
 button {
     border-radius: 8px;
 }
+
+/* Mode buttons */
+
+.checkbox {
+    display: flex;
+}
+
+.checkbox:checked + label {
+    border: 1px solid green;
+    background-color: green;
+}
+
+input[type=checkbox]:checked + label {
+    background-color: green;
+}
+
+.checkbox input[type="checkbox"]{
+    opacity: 0;
+}
+
+label {
+    color: white;
+    padding: 0.7rem;
+    background-color: red;
+    margin: 0.1rem;
+    width: 7rem;
+    text-align: center;
+}
+
+/* Slider */
+
+#slider-value {
+    color: white;
+    text-align: center;
+}
+
+/* Canvas */
 
 #grid-wrapper {
     display: grid;

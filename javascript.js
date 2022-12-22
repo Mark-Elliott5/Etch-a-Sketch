@@ -15,6 +15,9 @@ const clearButton = document.getElementById('clear');
 clearButton.addEventListener('click', clearGrid);
 const slider = document.getElementById('dimension-slider');
 slider.addEventListener('mouseup', createGrid);
+const sliderOutput = document.getElementById('slider-value');
+sliderOutput.textContent = `${slider.value} x ${slider.value}`;
+slider.addEventListener('input', () => sliderOutput.textContent = `${slider.value} x ${slider.value}`);
 const gridWrapper = document.getElementById('grid-wrapper');
 gridWrapper.addEventListener('mousedown', () => clickHeldDown = true);
 gridWrapper.addEventListener('mouseup', () => clickHeldDown = false);
@@ -35,6 +38,17 @@ function createGrid() {
     for (let i = 0; i < (gridDimensions**2); i++) {
         let box = document.createElement('div');
         box.style.backgroundColor = `white`;
+        // previousColor = box.style.backgroundColor;
+        // box.addEventListener('mouseenter', () => {
+        //     if (!(clickHeldDown)) {
+        //         box.style.backgroundColor = `${currentSelectedColor}`;
+        //     } else { return; }
+        // });
+        // box.addEventListener('mouseleave', () => {
+        //     if (!(clickHeldDown)) {
+        //         box.style.backgroundColor = `${previousColor}`;
+        //     } else { return; }
+        // });
         box.addEventListener('mouseover', () => {
             if (clickHeldDown) {
                 if (rainbowButton.checked) {
