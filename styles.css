@@ -33,9 +33,14 @@ header, footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 1rem;
 }
 
 /* Color palette */
+
+#color-picker {
+    margin: auto;
+}
 
 .color-toolbox {
     display: grid;
