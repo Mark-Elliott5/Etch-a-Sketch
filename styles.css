@@ -35,7 +35,7 @@ header, footer {
     justify-content: center;
 }
 
-/* Color picker */
+/* Color palette */
 
 .color-toolbox {
     display: grid;
@@ -43,47 +43,47 @@ header, footer {
     grid-template-rows: repeat(2, 1fr);
 }
 
-.color-picker {
+.color-palette {
     padding: 1rem;
 }
 
-.color-picker.red {
+.color-palette.red {
     background-color: red;
 }
 
-.color-picker.orange {
+.color-palette.orange {
     background-color: orange;
 }
 
-.color-picker.yellow {
+.color-palette.yellow {
     background-color: yellow;
 }
 
-.color-picker.green {
+.color-palette.green {
     background-color: green;
 }
 
-.color-picker.cyan {
+.color-palette.cyan {
     background-color: cyan;
 }
 
-.color-picker.blue {
+.color-palette.blue {
     background-color: blue;
 }
 
-.color-picker.purple {
+.color-palette.purple {
     background-color: purple;
 }
 
-.color-picker.pink {
+.color-palette.pink {
     background-color: pink;
 }
 
-.color-picker.black {
+.color-palette.black {
     background-color: black;
 }
 
-.color-picker.white {
+.color-palette.white {
     background-color: white;
 }
 

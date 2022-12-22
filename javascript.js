@@ -23,14 +23,16 @@ gridWrapper.addEventListener('mousedown', () => clickHeldDown = true);
 gridWrapper.addEventListener('mouseup', () => clickHeldDown = false);
 let currentSelectedColor = 'black';
 let clickHeldDown = false;
-let colorPicker = document.getElementsByClassName('color-picker');
-for (let i = 0; i < colorPicker.length; i++) {
-    colorPicker[i].addEventListener('click', () => {
-        currentSelectedColor = colorPicker[i].value;
+let colorPalette = document.getElementsByClassName('color-palette');
+for (let i = 0; i < colorPalette.length; i++) {
+    colorPalette[i].addEventListener('click', () => {
+        currentSelectedColor = colorPalette[i].value;
         rainbowButton.checked = false;
         randomButton.checked = false;
     })
 }
+const colorPicker = document.getElementById('color-picker');
+colorPicker.addEventListener('change', () => currentSelectedColor = colorPicker.value)
 
 function createGrid() {
     gridWrapper.replaceChildren();
