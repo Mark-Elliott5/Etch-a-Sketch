@@ -5,18 +5,17 @@ body {
     flex-direction: column;
     background-color: rgb(45, 45, 45);
     font-family: "Nanum Gothic";
-    /* height: 100vh; */
-    /* min-height: 100vh; */
-    /* position: fixed; */
-    /* overflow-x: hidden; */
-    /* margin: 0;
+    /* height: 100vh;
+    min-height: 100vh;
+    position: fixed; 
+    overflow-x: hidden;
+    margin: 0;
     padding: 0;
     width: 100%;
     width: -moz-available;
     width: -webkit-fill-available;
     width: fill-available;
-    justify-content: space-around;
-    font-family: 'Courier New', Courier, monospace; */
+    justify-content: space-around; */
 }
 
 header, footer {
@@ -58,6 +57,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    width: 100%;
 }
 
 /* Color palette */
@@ -121,6 +121,8 @@ button {
     background: rgb(90, 90, 90);
     color: white;
     outline: none;
+    font-family: inherit;
+    font-size: inherit;
 }
 
 button:active {
@@ -145,17 +147,25 @@ input[type=checkbox]:checked + label {
 .checkbox input[type="checkbox"]{
     opacity: 0;
     margin: 0;
+    width: 0;
+    height: 0;
 }
 
 label {
     display: flex;
     flex: 1 0 0;
     color: white;
-    padding: 0.7rem;
+    padding: 1rem;
     background-color: rgb(90, 90, 90);
     width: 8rem;
     justify-content: center;
     align-items: center;
+}
+
+/* Clear */
+
+#clear {
+    padding: 1rem;
 }
 
 /* Slider */
@@ -163,16 +173,52 @@ label {
 .slider-wrapper {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: 0.75rem;
 }
 
 #slider-value {
     color: white;
     text-align: center;
+    margin-top: 0.75rem;
 }
 
-/* input[type=range] {
+input[type=range] {
     -webkit-appearance: none;
+    width: 100%;
+    background: white;
+    height: 4px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid rgb(0, 90, 0);
+    height: 16px;
+    width: 16px;
     background-color: green;
+    cursor: pointer;
+}
+  
+  /* All the same stuff for Firefox 
+  input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
+  
+  /* All the same stuff for IE 
+  input[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
 } */
 
 /* Canvas */
@@ -189,15 +235,7 @@ label {
     background-color: blue;
 }
 
-/* .box:hover {
-    background-color: rgb(128, 0, 128);
-} */
-
 @media screen and (max-width: 1024px) {
-    footer {
-        position: relative;
-    }
-
     .main-content-box {
         flex-direction: column-reverse;
         gap: 1rem;
@@ -209,5 +247,59 @@ label {
 
     label {
         align-self: center;
+    }
+
+    footer {
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .main-content-box {
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+
+    #grid-wrapper {
+        width: 400px;
+        height: 400px;
+    }
+
+    .tools {
+        flex-direction: column;
+        width: 90vw;
+    }
+
+    label {
+        align-self: center;
+    }
+
+    footer {
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .main-content-box {
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+
+    #grid-wrapper {
+        width: 360px;
+        height: 360px;
+    }
+
+    .tools {
+        flex-direction: column;
+        width: 90vw;
+    }
+
+    label {
+        align-self: center;
+    }
+
+    footer {
+        position: relative;
     }
 }
