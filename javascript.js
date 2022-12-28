@@ -44,17 +44,6 @@ function createGrid() {
     for (let i = 0; i < (gridDimensions**2); i++) {
         let box = document.createElement('div');
         box.style.backgroundColor = `white`;
-        // previousColor = box.style.backgroundColor;
-        // box.addEventListener('mouseenter', () => {
-        //     if (!(clickHeldDown)) {
-        //         box.style.backgroundColor = `${currentSelectedColor}`;
-        //     } else { return; }
-        // });
-        // box.addEventListener('mouseleave', () => {
-        //     if (!(clickHeldDown)) {
-        //         box.style.backgroundColor = `${previousColor}`;
-        //     } else { return; }
-        // });
         box.addEventListener('mouseover', () => {
             if (clickHeldDown) {
                 if (rainbowButton.checked) {
