@@ -219,8 +219,14 @@ input[type=range]::-ms-thumb {
     height: 600px;
 }
 
-.grid-color {
-    background-color: blue;
+#grid-wrapper > div {
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -webkit-user-drag: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
 }
 
 @media screen and (max-width: 1024px) {
