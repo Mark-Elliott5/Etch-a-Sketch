@@ -5,6 +5,9 @@ body {
     flex-direction: column;
     background-color: rgb(45, 45, 45);
     font-family: "Nanum Gothic";
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 header, footer {
@@ -35,6 +38,7 @@ footer {
     align-items: center;
     gap: 5rem;
     margin: 1rem;
+    height: 100vh;
 }
 
 /* Tools */
@@ -144,7 +148,7 @@ input[type=checkbox]:checked + label {
     margin: 0;
     width: 0;
     height: 0;
-    visibility: hidden;
+    visibility: collapse;
 }
 
 label {
