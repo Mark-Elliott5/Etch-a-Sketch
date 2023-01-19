@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
+:root {
+	--header: 3rem;
+	--footer: 1rem;
+	--main: calc(85vh - calc(var(--header) + var(--footer)));
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -25,6 +31,7 @@ footer {
     left: 0;
     width: 100%;
     margin-bottom: 1rem;
+    font-size: 1rem;
 }
 
 .github-link {
@@ -222,8 +229,8 @@ input[type=range]::-ms-thumb {
 
 #grid-wrapper {
     display: grid;
-    width: 600px;
-    height: 600px;
+    width: var(--main);
+    height: var(--main);
 }
 
 #grid-wrapper > div {
@@ -261,11 +268,6 @@ input[type=range]::-ms-thumb {
         gap: 1rem;
     }
 
-    #grid-wrapper {
-        width: 400px;
-        height: 400px;
-    }
-
     .tools {
         flex-direction: column;
         width: 90vw;
@@ -284,11 +286,6 @@ input[type=range]::-ms-thumb {
     .main-content-box {
         flex-direction: column-reverse;
         gap: 1rem;
-    }
-
-    #grid-wrapper {
-        width: 360px;
-        height: 360px;
     }
 
     .tools {
