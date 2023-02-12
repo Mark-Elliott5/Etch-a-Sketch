@@ -9,7 +9,7 @@
 body {
     display: flex;
     flex-direction: column;
-    background: radial-gradient(#1b1b1b 50%, #2c2c2c 100%);
+    background: linear-gradient(0deg,#1b1b1b, #2c2c2c);
     font-family: "Nanum Gothic";
     width: 100vw;
     height: 100vh;
@@ -23,6 +23,7 @@ header, footer {
 
 header {
     font-size: 3rem;
+    font-family: Roboto Slab;
 }
 
 footer {
