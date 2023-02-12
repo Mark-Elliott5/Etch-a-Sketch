@@ -9,7 +9,7 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color: rgb(45, 45, 45);
+    background: radial-gradient(#1b1b1b 50%, #2c2c2c 100%);
     font-family: "Nanum Gothic";
     width: 100vw;
     height: 100vh;
