@@ -1,29 +1,36 @@
 const colors = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple', 'pink']
 const rainbowButton = document.getElementById('rainbow-mode');
+
+const clearButton = document.getElementById('clear');
+clearButton.addEventListener('click', clearGrid);
+
+const slider = document.getElementById('dimension-slider');
+slider.addEventListener('mouseup', createGrid);
+const sliderOutput = document.getElementById('slider-value');
+sliderOutput.textContent = `${slider.value} x ${slider.value}`;
+slider.addEventListener('input', () => sliderOutput.textContent = `${slider.value} x ${slider.value}`);
+
+const gridWrapper = document.getElementById('grid-wrapper');
+gridWrapper.addEventListener('mousedown', () => clickHeldDown = true);
+gridWrapper.addEventListener('mouseup', () => clickHeldDown = false);
+
+let currentSelectedColor = 'black';
+let clickHeldDown = false;
+let colorPalette = document.getElementsByClassName('color-palette');
+
 rainbowButton.addEventListener('change', () => {
     if (rainbowButton.checked) {
         randomButton.checked = false;
     }
 })
+
 const randomButton = document.getElementById('random-mode');
 randomButton.addEventListener('change', () => {
     if (randomButton.checked) {
         rainbowButton.checked = false;
     }
 })
-const clearButton = document.getElementById('clear');
-clearButton.addEventListener('click', clearGrid);
-const slider = document.getElementById('dimension-slider');
-slider.addEventListener('mouseup', createGrid);
-const sliderOutput = document.getElementById('slider-value');
-sliderOutput.textContent = `${slider.value} x ${slider.value}`;
-slider.addEventListener('input', () => sliderOutput.textContent = `${slider.value} x ${slider.value}`);
-const gridWrapper = document.getElementById('grid-wrapper');
-gridWrapper.addEventListener('mousedown', () => clickHeldDown = true);
-gridWrapper.addEventListener('mouseup', () => clickHeldDown = false);
-let currentSelectedColor = 'black';
-let clickHeldDown = false;
-let colorPalette = document.getElementsByClassName('color-palette');
+
 for (let i = 0; i < colorPalette.length; i++) {
     colorPalette[i].addEventListener('click', () => {
         currentSelectedColor = colorPalette[i].value;
@@ -31,6 +38,7 @@ for (let i = 0; i < colorPalette.length; i++) {
         randomButton.checked = false;
     })
 }
+
 const colorPicker = document.getElementById('color-picker');
 colorPicker.addEventListener('change', () => {
     currentSelectedColor = colorPicker.value;
