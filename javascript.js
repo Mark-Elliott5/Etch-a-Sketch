@@ -67,6 +67,42 @@ function createGrid() {
                 return; 
             }
         })
+        box.addEventListener('mousedown', () => {
+            if (rainbowButton.checked) {
+                box.style.backgroundColor = `${colors[(Math.floor(Math.random() * 8))]}`;
+            } else if (randomButton.checked) {
+                box.style.backgroundColor = `rgb(${(Math.floor(Math.random() * 256))}, 
+                ${(Math.floor(Math.random() * 256))}, 
+                ${(Math.floor(Math.random() * 256))})`;
+            } else {
+                box.style.backgroundColor = `${currentSelectedColor}`;
+            }
+        })
+        box.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            if (rainbowButton.checked) {
+                box.style.backgroundColor = `${colors[(Math.floor(Math.random() * 8))]}`;
+            } else if (randomButton.checked) {
+                box.style.backgroundColor = `rgb(${(Math.floor(Math.random() * 256))}, 
+                ${(Math.floor(Math.random() * 256))}, 
+                ${(Math.floor(Math.random() * 256))})`;
+            } else {
+                box.style.backgroundColor = `${currentSelectedColor}`;
+            }
+        })
+        box.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            console.log(e.target);
+            if (rainbowButton.checked) {
+                box.style.backgroundColor = `${colors[(Math.floor(Math.random() * 8))]}`;
+            } else if (randomButton.checked) {
+                box.style.backgroundColor = `rgb(${(Math.floor(Math.random() * 256))}, 
+                ${(Math.floor(Math.random() * 256))}, 
+                ${(Math.floor(Math.random() * 256))})`;
+            } else {
+                box.style.backgroundColor = `${currentSelectedColor}`;
+            }
+        })
         gridWrapper.appendChild(box);
     }
     gridWrapper.style.cssText = 
