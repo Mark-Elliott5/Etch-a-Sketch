@@ -92,7 +92,6 @@ function createGrid() {
         })
         box.addEventListener('touchmove', (e) => {
             e.preventDefault();
-            console.log(e.target);
             if (rainbowButton.checked) {
                 box.style.backgroundColor = `${colors[(Math.floor(Math.random() * 8))]}`;
             } else if (randomButton.checked) {
