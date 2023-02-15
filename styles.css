@@ -262,6 +262,10 @@ input[type=range]::-ms-thumb {
 }
 
 @media screen and (max-width: 425px) {
+    body {
+        overflow: visible;
+    }
+
     .main-content-box {
         flex-direction: column-reverse;
         gap: 1rem;
@@ -286,6 +290,10 @@ input[type=range]::-ms-thumb {
 }
 
 @media screen and (max-width: 390px) {
+    body {
+        overflow: visible;
+    }
+
     .main-content-box {
         flex-direction: column-reverse;
         gap: 1rem;
