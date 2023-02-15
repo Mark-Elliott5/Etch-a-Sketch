@@ -267,9 +267,13 @@ input[type=range]::-ms-thumb {
         gap: 1rem;
     }
 
+    #grid-wrapper {
+        width: 90vw;
+    }
+
     .tools {
         flex-direction: column;
-        width: 90vw;
+        width: 60vw;
     }
 
     label {
@@ -287,9 +291,13 @@ input[type=range]::-ms-thumb {
         gap: 1rem;
     }
 
+    #grid-wrapper {
+        width: 90vw;
+    }
+
     .tools {
         flex-direction: column;
-        width: 90vw;
+        width: 60vw;
     }
 
     label {
