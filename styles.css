@@ -240,12 +240,18 @@ input[type=range]::-ms-thumb {
     -moz-user-select: none !important;
     -ms-user-select: none !important;
     user-select: none !important;
+    touch-action: none !important;
 }
 
 @media screen and (max-width: 1024px) {
     .main-content-box {
         flex-direction: column-reverse;
         gap: 1rem;
+    }
+
+    #grid-wrapper {
+        width: 90vw;
+        height: 90vw;
     }
 
     .tools {
@@ -273,6 +279,7 @@ input[type=range]::-ms-thumb {
 
     #grid-wrapper {
         width: 90vw;
+        height: 90vw;
     }
 
     .tools {
@@ -301,6 +308,7 @@ input[type=range]::-ms-thumb {
 
     #grid-wrapper {
         width: 90vw;
+        height: 90vw;
     }
 
     .tools {
