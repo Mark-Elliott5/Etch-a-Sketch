@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
 :root {
-	--header: 3rem;
-	--footer: 3rem;
+	--header: 64px;
+	--footer: 64px;
 	--main: calc(85vh - calc(var(--header) + var(--footer)));
 }
 
@@ -30,7 +30,8 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
+    margin-top: 32px;
     font-size: 1rem;
 }
 
@@ -244,14 +245,13 @@ input[type=range]::-ms-thumb {
 }
 
 @media screen and (max-width: 1024px) {
+    body {
+        overflow: visible;
+    }
+
     .main-content-box {
         flex-direction: column-reverse;
         gap: 1rem;
-    }
-
-    #grid-wrapper {
-        width: 90vw;
-        height: 90vw;
     }
 
     .tools {
@@ -277,11 +277,6 @@ input[type=range]::-ms-thumb {
         gap: 1rem;
     }
 
-    #grid-wrapper {
-        width: 90vw;
-        height: 90vw;
-    }
-
     .tools {
         flex-direction: column;
         width: 60vw;
@@ -304,11 +299,6 @@ input[type=range]::-ms-thumb {
     .main-content-box {
         flex-direction: column-reverse;
         gap: 1rem;
-    }
-
-    #grid-wrapper {
-        width: 90vw;
-        height: 90vw;
     }
 
     .tools {
